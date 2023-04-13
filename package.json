@@ -1,0 +1,26 @@
+{
+  "name": "news-cover-graphql",
+  "version": "1.0.0",
+  "description": "An GraphQL API for News Cover",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "news",
+    "GraphQL",
+    "API"
+  ],
+  "author": "Wilberth Antonio López Aguilar",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
