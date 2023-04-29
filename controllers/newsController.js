@@ -1,6 +1,5 @@
 import { newsModel } from '../models/newsModel.js';
 
-
 export const getNews = async function (email, order = '') {
   //get all news
   try {
@@ -16,12 +15,44 @@ export const getNews = async function (email, order = '') {
   }
 }
 
-export const filterNewsByKeyword = async function (email, keyword, limit = 5, order = '') {
+export const filterNewsByCategory = async function (email, category, order = '') {
+  //get news by category
+  try {
+    const order_ = order === 'ASC' ? 'date' : order === 'DESC' ? '-date' : '';
+    const new_ = await newsModel.find({ "user.email": email, "categoy.name": category })
+      .sort(order_);
+    if (new_) {
+      return new_;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}
+
+export const filterNewsByKeyword = async function (email, keyword, order = '') {
   //get news by keyword
   try {
     const order_ = order === 'ASC' ? 'date' : order === 'DESC' ? '-date' : '';
     const new_ = await newsModel.find({ "user.email": email, "short_description": { $regex: '.*' + keyword + '.*', $options: 'i' } })
-      .limit(limit).sort(order_);
+      .sort(order_);
+    if (new_) {
+      return new_;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}
+
+export const filterNewsByTags = async function (email, tags, order = '') {
+  //get news by tags
+  try {
+    const order_ = order === 'ASC' ? 'date' : order === 'DESC' ? '-date' : '';
+    const new_ = await newsModel.find({ "user.email": email, "tags": { $in:  tags  } })
+      .sort(order_);
     if (new_) {
       return new_;
     } else {

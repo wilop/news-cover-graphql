@@ -52,8 +52,9 @@ This directory contains controller.
 ## TODO
 Add a checklist of things to do in this section.  
 
-- [ ] GraphQL queries
+- [x] GraphQL queries
 - [x] Get all news
+- [x] Get news by category
 - [x] Search news by keyword
-- [ ] Filter news by tag names
-- [ ] Implement JWT authentication
+- [x] Filter news by tag names
+- [x] Implement JWT authentication

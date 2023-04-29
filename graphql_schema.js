@@ -21,13 +21,6 @@ export const typeDefs = `#graphql
     name: String!
   }
 
-  #This "Tag" type defines the queryable fields for every Tag in our data source new.
-  
-  "This type defines a Tag"
-  type Tag {
-    name: String!
-  }
-  
   #This "News" type defines the queryable fields for every New in our data source.
   
   "This type defines a New"
@@ -40,7 +33,7 @@ export const typeDefs = `#graphql
    date: String!
    news_source: NewSource!
    category: Category!
-   tags: [Tag]!
+   tags: [String]!
   }
 
 
@@ -52,10 +45,16 @@ export const typeDefs = `#graphql
   type Query {
 
     "Get all news"
-    news(email: String, order: String): [New]
+    news(order: String): [New]
+
+    "Get news by category"
+    newsByCategory(category: String, order: String): [New]
 
     "Get news by keyword"
-    newsByKeyword(email: String, keyword: String, order: String): [New]
+    newsByKeyword(keyword: String, order: String): [New]
+    
+    "Get news by tags"
+     newsByTags(tags: [String], order: String): [New]
 
     "Get version of this API"
     version: String
