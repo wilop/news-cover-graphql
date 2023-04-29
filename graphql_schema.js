@@ -48,13 +48,13 @@ export const typeDefs = `#graphql
     news(order: String): [New]
 
     "Get news by category"
-    newsByCategory(category: String, order: String): [New]
+    newsByCategory(category: String!, order: String): [New]
 
     "Get news by keyword"
-    newsByKeyword(keyword: String, order: String): [New]
+    newsByKeyword(keyword: String!, order: String): [New]
     
     "Get news by tags"
-     newsByTags(tags: [String], order: String): [New]
+     newsByTags(tags: [String]!, order: String): [New]
 
     "Get version of this API"
     version: String

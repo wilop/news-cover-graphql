@@ -20,19 +20,7 @@ export const newsSchema = new Schema({
         "role": { type: roleSchema, required: true }
     },
     "category": { type: categorySchema, required: true },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "tags": { type: Array, required: false }
 });
-=======
-    "tags": { type: Array, required: false },
-}
-);
->>>>>>> Stashed changes
-=======
-    "tags": { type: Array, required: false },
-}
-);
->>>>>>> Stashed changes
 
 export const newsModel = mongoose.model('News', newsSchema);

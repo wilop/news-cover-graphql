@@ -5,8 +5,6 @@ import { typeDefs } from './graphql_schema.js';
 import { filterNewsByKeyword, filterNewsByCategory, filterNewsByTags, getNews } from './controllers/newsController.js';
 import { verifyToken } from './controllers/sessionController.js';
 import mongoose from 'mongoose';
-import * as dotenv from 'dotenv';
-dotenv.config();
 
 import * as dotenv from 'dotenv';
 dotenv.config();
