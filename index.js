@@ -3,6 +3,8 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from './graphql_schema.js';
 import { filterNewsByKeyword, getNews } from './controllers/newsController.js';
 import mongoose from 'mongoose';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 const port = process.env.PORT || 4000;
 const db = process.env.DB_CONNECTION || 'mongodb://127.0.0.1:27017/mynewscover';
