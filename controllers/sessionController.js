@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import fetch from 'node-fetch';
 dotenv.config();
 
 const url = process.env.URL_TOKEN || 'http://localhost:4000';
