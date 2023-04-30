@@ -9,7 +9,7 @@ export const newsSchema = new Schema({
     "title": { type: String, required: true },
     "short_description": { type: String, required: true },
     "permalink": { type: String, required: true },
-    "date": { type: Date, required: true },
+    "date": { type: String, required: true },
     "image": { type: String },
     "news_source": { type: newsSourceSchema, required: true },
     "user": {
